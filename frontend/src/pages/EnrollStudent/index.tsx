@@ -89,7 +89,7 @@ const EnrollStudent: React.FC = () => {
 
         <InputBox>
           <label htmlFor="id_subject">
-            Aluno
+            Disciplina
             <select
               name="id_subject"
               id="id_subject"

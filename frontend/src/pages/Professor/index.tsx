@@ -34,7 +34,9 @@ const Professor: React.FC = () => {
     <>
       <Header name={authProf} />
       <ButtonContainer>
-        <button type="button">Gerar relatórios</button>
+        <Link to="/evasion">
+          <button type="button">Evasão</button>
+        </Link>
       </ButtonContainer>
 
       <TableContainer>

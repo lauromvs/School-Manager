@@ -9,6 +9,7 @@ import AddStudent from '../pages/AddStudent';
 import AddEmployee from '../pages/AddEmployee';
 import AddSubject from '../pages/AddSubject';
 import EnrollStudent from '../pages/EnrollStudent';
+import Evasion from '../pages/Evasion';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -20,6 +21,7 @@ const Routes: React.FC = () => (
     <Route path="/addEmployee" component={AddEmployee} />
     <Route path="/addSubject" component={AddSubject} />
     <Route path="/enrollStudent" component={EnrollStudent} />
+    <Route path="/evasion" component={Evasion} />
   </Switch>
 );
 
