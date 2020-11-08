@@ -56,8 +56,8 @@ function orderTable(evasions: IEvasion[], order: string): any {
   );
 }
 
-const StudentItem: React.FC<EvasionItemProps> = props => {
+const EvasionItem: React.FC<EvasionItemProps> = props => {
   return orderTable(props.data, props.order);
 };
 
-export default StudentItem;
+export default EvasionItem;

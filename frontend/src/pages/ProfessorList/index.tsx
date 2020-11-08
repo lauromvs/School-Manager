@@ -1,42 +1,38 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
-import EvasionItem from '../../components/EvasionItem';
+import ProfessorItem from '../../components/ProfessorItem';
 
 import { TableHead, TableContainer } from './styles';
 import api from '../../services/api';
 
-interface IEvasion {
+interface ISubjectProfessors {
   id: string;
-  average: string;
-  frequency: number;
-  quantity_given_classes: number;
-  status: string;
-  student: {
-    name: string;
-  };
-  subject: {
+  name: string;
+  employee: {
     name: string;
   };
 }
 
-const Evasion: React.FC = () => {
-  const [evasions, setEvasions] = useState<IEvasion[]>([]);
+const ProfessorList: React.FC = () => {
+  const [subjectProfessors, setSubjectProfessors] = useState<
+    ISubjectProfessors[]
+  >([]);
   const [orderFilter, setOrderFilter] = useState('1');
 
   useEffect(() => {
-    api.get('/studentsSubjects/evasion').then(response => {
-      setEvasions(response.data);
+    api.get('/subjects').then(response => {
+      setSubjectProfessors(response.data);
     });
   }, []);
 
   return (
     <>
-      <Header name="Professor" />
+      <Header name="Funcionário" />
 
       <TableContainer>
         <TableHead>
-          <h1>Alunos</h1>
+          <h1>Professores</h1>
           <select
             name="order"
             id="order"
@@ -49,11 +45,13 @@ const Evasion: React.FC = () => {
           </select>
         </TableHead>
         <table>
-          {evasions && <EvasionItem data={evasions} order={orderFilter} />}
+          {subjectProfessors && (
+            <ProfessorItem data={subjectProfessors} order={orderFilter} />
+          )}
         </table>
       </TableContainer>
     </>
   );
 };
 
-export default Evasion;
+export default ProfessorList;
