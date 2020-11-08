@@ -4,6 +4,8 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  OneToMany,
+  JoinTable,
 } from 'typeorm';
 
 import Employee from './Employees';
@@ -16,7 +18,7 @@ class Subject {
   @Column()
   id_employee: string;
 
-  @ManyToOne(() => Employee)
+  @ManyToOne(type => Employee, employee => employee.id, { eager: true })
   @JoinColumn({ name: 'id_employee' })
   employee: Employee;
 

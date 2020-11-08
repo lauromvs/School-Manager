@@ -3,7 +3,12 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
+  ManyToOne,
+  JoinColumn,
+  JoinTable,
 } from 'typeorm';
+
+import Subject from './Subjects';
 
 @Entity('employees')
 class Employee {

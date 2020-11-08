@@ -17,14 +17,14 @@ class StudentSubject {
   @Column()
   id_student: string;
 
-  @ManyToOne(() => Student)
+  @ManyToOne(type => Student, student => student.name, { eager: true })
   @JoinColumn({ name: 'id_student' })
   student: Student;
 
   @Column()
   id_subject: string;
 
-  @ManyToOne(() => Subject)
+  @ManyToOne(type => Subject, subject => subject.name, { eager: true })
   @JoinColumn({ name: 'id_subject' })
   subject: Subject;
 
