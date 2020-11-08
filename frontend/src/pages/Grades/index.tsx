@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
-import EvasionItem from '../../components/EvasionItem';
+import GradeItem from '../../components/GradeItem';
 
 import { TableHead, TableContainer } from './styles';
 import api from '../../services/api';
 
-interface IEvasion {
+interface IGrades {
   id: string;
   average: string;
   frequency: number;
   quantity_given_classes: number;
   status: string;
+  n1: string;
+  n2: string;
   student: {
     name: string;
   };
@@ -20,9 +22,9 @@ interface IEvasion {
   };
 }
 
-const Evasion: React.FC = () => {
-  const [evasions, setEvasions] = useState<IEvasion[]>([]);
-  const [orderFilter, setOrderFilter] = useState('1');
+const Grades: React.FC = () => {
+  const [evasions, setEvasions] = useState<IGrades[]>([]);
+  const [orderFilter, setOrderFilter] = useState('0');
 
   useEffect(() => {
     api.get('/studentsSubjects/evasion').then(response => {
@@ -44,16 +46,16 @@ const Evasion: React.FC = () => {
               setOrderFilter(e.target.value);
             }}
           >
-            <option value="1">Crescente</option>
             <option value="0">Decrescente</option>
+            <option value="1">Crescente</option>
           </select>
         </TableHead>
         <table>
-          {evasions && <EvasionItem data={evasions} order={orderFilter} />}
+          {evasions && <GradeItem data={evasions} order={orderFilter} />}
         </table>
       </TableContainer>
     </>
   );
 };
 
-export default Evasion;
+export default Grades;

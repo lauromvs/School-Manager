@@ -37,6 +37,10 @@ const Professor: React.FC = () => {
         <Link to="/evasion">
           <button type="button">Evasão</button>
         </Link>
+
+        <Link to="/grades">
+          <button type="button">Notas</button>
+        </Link>
       </ButtonContainer>
 
       <TableContainer>
