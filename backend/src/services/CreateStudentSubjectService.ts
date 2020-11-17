@@ -67,24 +67,24 @@ class CreateStudentSubjectService {
     }
 
     // verificar se esse aluno já está associado a essa matéria:
-    const studentSubjectExists = await studentsSubjectsRepository.findOne({
+    let studentSubject = await studentsSubjectsRepository.findOne({
       where: {
         id_student,
         id_subject,
       },
     });
 
-    if (studentSubjectExists) {
-      studentSubjectExists.n1 = n1;
-      studentSubjectExists.n2 = n2;
-      studentSubjectExists.average = average;
-      studentSubjectExists.frequency = frequency;
-      studentSubjectExists.status = status;
-      studentSubjectExists.quantity_given_classes = quantity_given_classes;
+    if (studentSubject) {
+      studentSubject.n1 = n1;
+      studentSubject.n2 = n2;
+      studentSubject.average = average;
+      studentSubject.frequency = frequency;
+      studentSubject.status = status;
+      studentSubject.quantity_given_classes = quantity_given_classes;
 
-      await studentsSubjectsRepository.save(studentSubjectExists);
+      await studentsSubjectsRepository.save(studentSubject);
     } else {
-      const studentSubject = studentsSubjectsRepository.create({
+      studentSubject = studentsSubjectsRepository.create({
         id_student,
         id_subject,
         n1,
@@ -96,9 +96,8 @@ class CreateStudentSubjectService {
       });
 
       await studentsSubjectsRepository.save(studentSubject);
-
-      return studentSubject;
     }
+    return studentSubject;
   }
 }
 

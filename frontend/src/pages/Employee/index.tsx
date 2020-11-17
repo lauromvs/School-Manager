@@ -55,7 +55,10 @@ const Employee: React.FC = () => {
         <Link to="/enrollStudent">
           <button type="button">Matricular alunos</button>
         </Link>
-        <button type="button">Gerar relatórios</button>
+
+        <Link to="/professorList">
+          <button type="button">Lista de Professores</button>
+        </Link>
       </ButtonContainer>
 
       <TableContainer>

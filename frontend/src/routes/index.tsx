@@ -10,7 +10,11 @@ import AddEmployee from '../pages/AddEmployee';
 import AddSubject from '../pages/AddSubject';
 import EnrollStudent from '../pages/EnrollStudent';
 import Evasion from '../pages/Evasion';
+<<<<<<< HEAD
 import Grades from '../pages/Grades';
+=======
+import ProfessorList from '../pages/ProfessorList';
+>>>>>>> aux2
 
 const Routes: React.FC = () => (
   <Switch>
@@ -23,7 +27,11 @@ const Routes: React.FC = () => (
     <Route path="/addSubject" component={AddSubject} />
     <Route path="/enrollStudent" component={EnrollStudent} />
     <Route path="/evasion" component={Evasion} />
+<<<<<<< HEAD
     <Route path="/grades" component={Grades} />
+=======
+    <Route path="/professorList" component={ProfessorList} />
+>>>>>>> aux2
   </Switch>
 );
 
