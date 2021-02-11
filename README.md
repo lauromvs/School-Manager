@@ -39,7 +39,7 @@ O layout da aplicação está disponível no [Figma](https://www.figma.com/). --
 
 ## 📜 Licença
 
-> Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/lauromvs/school-manager) para mais detalhes.
+> Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/lauromvs/school-manager/blob/main/LICENSE.md) para mais detalhes.
 
 ---
 
